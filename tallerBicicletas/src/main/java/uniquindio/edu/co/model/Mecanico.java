@@ -29,4 +29,63 @@ public class Mecanico {
         this.telefono = telefono;
         this.tarea = tarea;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public String getNivelMecanico() {
+        return nivelMecanico;
+    }
+
+    public void setNivelMecanico(String nivelMecanico) {
+        this.nivelMecanico = nivelMecanico;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getTarea() {
+        return tarea;
+    }
+
+    public void setTarea(String tarea) {
+        this.tarea = tarea;
+    }
+
+    public List<OrdenServicio> getListOrdenMecanico() {
+        return listOrdenMecanico;
+    }
+
+    public void setListOrdenMecanico(List<OrdenServicio> listOrdenMecanico) {
+        this.listOrdenMecanico = listOrdenMecanico;
+    }
+
+    @Override
+    public String toString() {
+        return "Mecanico{" +
+                "tarea='" + tarea + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", nivelMecanico='" + nivelMecanico + '\'' +
+                ", cedula='" + cedula + '\'' +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }

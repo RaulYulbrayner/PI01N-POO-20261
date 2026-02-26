@@ -32,4 +32,91 @@ public class OrdenServicio {
         this.idOrdenServicio = idOrdenServicio;
         this.manoObra = manoObra;
     }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getFechaIngreso() {
+        return fechaIngreso;
+    }
+
+    public void setFechaIngreso(String fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
+    }
+
+    public int getIdOrdenServicio() {
+        return idOrdenServicio;
+    }
+
+    public void setIdOrdenServicio(int idOrdenServicio) {
+        this.idOrdenServicio = idOrdenServicio;
+    }
+
+    public double getManoObra() {
+        return manoObra;
+    }
+
+    public void setManoObra(double manoObra) {
+        this.manoObra = manoObra;
+    }
+
+    public Cliente getTheCliente() {
+        return theCliente;
+    }
+
+    public void setTheCliente(Cliente theCliente) {
+        this.theCliente = theCliente;
+    }
+
+    public Bicicleta getTheBicicleta() {
+        return theBicicleta;
+    }
+
+    public void setTheBicicleta(Bicicleta theBicicleta) {
+        this.theBicicleta = theBicicleta;
+    }
+
+    public Mecanico getTheMecanico() {
+        return theMecanico;
+    }
+
+    public void setTheMecanico(Mecanico theMecanico) {
+        this.theMecanico = theMecanico;
+    }
+
+    public List<Repuesto> getListOrdenRepuestos() {
+        return listOrdenRepuestos;
+    }
+
+    public void setListOrdenRepuestos(List<Repuesto> listOrdenRepuestos) {
+        this.listOrdenRepuestos = listOrdenRepuestos;
+    }
+
+    @Override
+    public String toString() {
+        return "OrdenServicio{" +
+                "descripcion='" + descripcion + '\'' +
+                ", estado='" + estado + '\'' +
+                ", fechaIngreso='" + fechaIngreso + '\'' +
+                ", idOrdenServicio=" + idOrdenServicio +
+                ", manoObra=" + manoObra +
+                ", theCliente=" + theCliente +
+                ", theBicicleta=" + theBicicleta +
+                ", theMecanico=" + theMecanico +
+                ", listOrdenRepuestos=" + listOrdenRepuestos +
+                '}';
+    }
 }

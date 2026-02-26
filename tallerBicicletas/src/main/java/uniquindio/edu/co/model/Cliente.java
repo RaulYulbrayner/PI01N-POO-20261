@@ -27,4 +27,63 @@ public class Cliente {
         this.email = email;
         this.cedula = cedula;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
+
+    public List<Bicicleta> getListBicicletasCliente() {
+        return listBicicletasCliente;
+    }
+
+    public void setListBicicletasCliente(List<Bicicleta> listBicicletasCliente) {
+        this.listBicicletasCliente = listBicicletasCliente;
+    }
+
+    public List<OrdenServicio> getListOrdenCliente() {
+        return listOrdenCliente;
+    }
+
+    public void setListOrdenCliente(List<OrdenServicio> listOrdenCliente) {
+        this.listOrdenCliente = listOrdenCliente;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nombre='" + nombre + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", email='" + email + '\'' +
+                ", cedula=" + cedula +
+                ", listBicicletasCliente=" + listBicicletasCliente +
+                '}';
+    }
 }
