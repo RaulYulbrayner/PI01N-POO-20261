@@ -8,7 +8,7 @@ public class Cliente {
     private String nombre;
     private String telefono;
     private String email;
-    private int cedula;
+    private String cedula;
 
     //Relaciones
     private List<Bicicleta> listBicicletasCliente;
@@ -21,7 +21,7 @@ public class Cliente {
      * @param email del cliente
      * @param cedula del cliente
      */
-    public Cliente(String nombre, String telefono, String email, int cedula) {
+    public Cliente(String nombre, String telefono, String email, String cedula) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.email = email;
@@ -52,11 +52,11 @@ public class Cliente {
         this.email = email;
     }
 
-    public int getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 

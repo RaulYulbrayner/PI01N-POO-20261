@@ -21,6 +21,12 @@ public class Repuesto {
         this.idRepuesto = idRepuesto;
     }
 
+    public double costoRepuesto(){
+        double valorCosto = cantidad * costo;
+        return valorCosto;
+    }
+
+
     public String getNombre() {
         return nombre;
     }

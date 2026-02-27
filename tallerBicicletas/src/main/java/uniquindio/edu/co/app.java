@@ -2,6 +2,8 @@ package uniquindio.edu.co;
 
 import uniquindio.edu.co.model.Taller;
 
+import javax.swing.*;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class app {
@@ -9,17 +11,27 @@ public class app {
     public static void main(String[] args) {
 
         Taller taller = new Taller("Taller Yulbraynner", "2N", "12345");
-        Taller taller1 = new Taller("Talleres", "5N", "123455678");
-        Taller taller2 = new Taller("Honda", "14-21", "123hahah2");
-        Taller taller3 = new Taller("Mazda", "10n", "123hhh45");
-        Taller taller4 = new Taller("Kia", "10-222", "12345H");
+        //Crear cliente
+        String nombre = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+        String telefono = JOptionPane.showInputDialog("Ingrese el telefono del cliente:");
+        String email = JOptionPane.showInputDialog("Ingrese el email del cliente:");
+        String cedula = JOptionPane.showInputDialog("Ingrese la cedula del cliente:");
+
+        String respuesta =  taller.crearCliente(nombre, telefono, email, cedula);
+        JOptionPane.showMessageDialog(null, respuesta);
+
+        String nombre1 = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+        String telefono1 = JOptionPane.showInputDialog("Ingrese el telefono del cliente:");
+        String email1 = JOptionPane.showInputDialog("Ingrese el email del cliente:");
+        String cedula1 = JOptionPane.showInputDialog("Ingrese la cedula del cliente:");
+
+        String respuesta1 =  taller.crearCliente(nombre1, telefono1, email1, cedula1);
+        JOptionPane.showMessageDialog(null, respuesta1);
 
 
-        System.out.println(taller);
-        System.out.println(taller1);
-        System.out.println(taller2);
-        System.out.println(taller3);
-        System.out.println(taller4);
+
+        JOptionPane.showMessageDialog(null, taller.toString());
+
 
     }
 }

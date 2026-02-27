@@ -33,6 +33,16 @@ public class OrdenServicio {
         this.manoObra = manoObra;
     }
 
+    public double calcularCostoTotalOrden(){
+        double costoRepuestos = 0;
+        double costoTotal = 0;
+        for(Repuesto rs : listOrdenRepuestos){
+            costoRepuestos += rs.costoRepuesto();
+        }
+        costoTotal = manoObra + costoRepuestos;
+        return costoTotal;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
