@@ -1,31 +1,43 @@
 package uniquindio.edu.co.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
 
-    //Atributos
+    // Atributos
     private String nombre;
     private String telefono;
     private String email;
     private String cedula;
 
-    //Relaciones
+    // Relaciones
     private List<Bicicleta> listBicicletasCliente;
     private List<OrdenServicio> listOrdenCliente;
 
     /**
-     * Metodo constructor de la clase cliente
-     * @param nombre del cliente
-     * @param telefono del cliente
-     * @param email del cliente
-     * @param cedula del cliente
+     * Constructor de la clase Cliente.
+     * @param nombre del cliente.
+     * @param telefono del cliente.
+     * @param email del cliente.
+     * @param cedula del cliente.
      */
     public Cliente(String nombre, String telefono, String email, String cedula) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.email = email;
         this.cedula = cedula;
+        this.listBicicletasCliente = new ArrayList<>();
+        this.listOrdenCliente = new ArrayList<>();
+    }
+
+    /**
+     * Asigna una bicicleta a un cliente.
+     * @param bicicleta a asignar.
+     */
+    public void asignarBicicleta(Bicicleta bicicleta) {
+        listBicicletasCliente.add(bicicleta);
+        bicicleta.setTheCliente(this);
     }
 
     public String getNombre() {

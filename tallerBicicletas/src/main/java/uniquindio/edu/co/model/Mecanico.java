@@ -4,23 +4,23 @@ import java.util.List;
 
 public class Mecanico {
 
-    //Atributos
+    // Atributos
     private String nombre;
     private String cedula;
     private String nivelMecanico;
     private String telefono;
     private String tarea;
 
-    //Relaciones
+    // Relaciones
     private List<OrdenServicio> listOrdenMecanico;
 
     /**
-     * Metodo constructor de la clase Mecanico
-     * @param nombre del mecanico
-     * @param cedula del mecanico
-     * @param nivelMecanico del mecanico
-     * @param telefono del mecanico
-     * @param tarea del mecanico
+     * Constructor de la clase Mecanico.
+     * @param nombre del mecanico.
+     * @param cedula del mecanico.
+     * @param nivelMecanico nivel del mecanico.
+     * @param telefono del mecanico.
+     * @param tarea asignada al mecanico.
      */
     public Mecanico(String nombre, String cedula, String nivelMecanico, String telefono, String tarea) {
         this.nombre = nombre;
@@ -81,11 +81,11 @@ public class Mecanico {
     @Override
     public String toString() {
         return "Mecanico{" +
-                "tarea='" + tarea + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", nivelMecanico='" + nivelMecanico + '\'' +
+                "nombre='" + nombre + '\'' +
                 ", cedula='" + cedula + '\'' +
-                ", nombre='" + nombre + '\'' +
+                ", nivelMecanico='" + nivelMecanico + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", tarea='" + tarea + '\'' +
                 '}';
     }
 }

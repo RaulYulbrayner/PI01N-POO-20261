@@ -1,5 +1,6 @@
 package uniquindio.edu.co.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrdenServicio {
@@ -25,14 +26,32 @@ public class OrdenServicio {
      * @param idOrdenServicio de la oden de servicio
      * @param manoObra de la oden de servicio
      */
-    public OrdenServicio(String descripcion, String estado, String fechaIngreso, int idOrdenServicio, double manoObra) {
+    public OrdenServicio(String descripcion, String estado, String fechaIngreso, int idOrdenServicio, double manoObra, Cliente cliente, Bicicleta bicicleta, Mecanico mecanico) {
         this.descripcion = descripcion;
         this.estado = estado;
         this.fechaIngreso = fechaIngreso;
         this.idOrdenServicio = idOrdenServicio;
         this.manoObra = manoObra;
+
+        this.theCliente = cliente;
+        this.theBicicleta = bicicleta;
+        this.theBicicleta = bicicleta;
+
+        this.listOrdenRepuestos = new ArrayList<>();
     }
 
+    /**
+     * Metodo que permite agregar repuestos a la orden de servicio
+     * @param repuesto
+     */
+    public void agregarRepuesto(Repuesto repuesto){
+        listOrdenRepuestos.add(repuesto);
+    }
+
+    /**
+     * Metodo que permite calcular el costo total de todos los item de repuesto de la orden de servicio
+     * @return costo toal de la orden de servicio
+     */
     public double calcularCostoTotalOrden(){
         double costoRepuestos = 0;
         double costoTotal = 0;
@@ -118,15 +137,16 @@ public class OrdenServicio {
     @Override
     public String toString() {
         return "OrdenServicio{" +
-                "descripcion='" + descripcion + '\'' +
+                "id=" + idOrdenServicio +
+                ", descripcion='" + descripcion + '\'' +
                 ", estado='" + estado + '\'' +
                 ", fechaIngreso='" + fechaIngreso + '\'' +
-                ", idOrdenServicio=" + idOrdenServicio +
                 ", manoObra=" + manoObra +
-                ", theCliente=" + theCliente +
-                ", theBicicleta=" + theBicicleta +
-                ", theMecanico=" + theMecanico +
-                ", listOrdenRepuestos=" + listOrdenRepuestos +
+                ", cliente=" + (theCliente != null ? theCliente.getCedula() : "Sin cliente") +
+                ", bicicleta=" + (theBicicleta != null ? theBicicleta.getNumChasis() : "Sin bici") +
+                ", mecanico=" + (theMecanico != null ? theMecanico.getCedula() : "Sin mec") +
+                ", repuestos=" + listOrdenRepuestos +
+                ", total=" + calcularCostoTotalOrden() +
                 '}';
     }
 }

@@ -2,6 +2,7 @@ package uniquindio.edu.co.model;
 
 public class Repuesto {
 
+    //Atributos
     private String nombre;
     private int cantidad;
     private double costo;
@@ -21,11 +22,14 @@ public class Repuesto {
         this.idRepuesto = idRepuesto;
     }
 
+    /**
+     * Metodo que permite calcular el costo de un repuesto
+     * @return cosoto total repuessto
+     */
     public double costoRepuesto(){
         double valorCosto = cantidad * costo;
         return valorCosto;
     }
-
 
     public String getNombre() {
         return nombre;
