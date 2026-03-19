@@ -7,7 +7,7 @@ public class Cliente {
 
     // Atributos
     private String nombre;
-    private String telefono;
+    private int telefono;
     private String email;
     private String cedula;
 
@@ -22,7 +22,7 @@ public class Cliente {
      * @param email del cliente.
      * @param cedula del cliente.
      */
-    public Cliente(String nombre, String telefono, String email, String cedula) {
+    public Cliente(String nombre, int telefono, String email, String cedula) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.email = email;
@@ -48,11 +48,11 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public String getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 

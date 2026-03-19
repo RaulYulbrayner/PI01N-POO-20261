@@ -45,7 +45,7 @@ public class Taller {
      * @param cedula Cédula del cliente.
      * @return Mensaje indicando el resultado de la operación.
      */
-    public String crearCliente(String nombre, String telefono, String email, String cedula){
+    public String crearCliente(String nombre, int telefono, String email, String cedula){
         String respuesta = "";
         if(buscarCliente(cedula)){
             respuesta = "El cliente ya existe con el mismo numero de cedula";
@@ -97,7 +97,7 @@ public class Taller {
      * @param nuevoEmail Nuevo email del cliente.
      * @return Mensaje indicando el resultado de la operación.
      */
-    public String actualizarCliente(String cedula, String nuevoNombre, String nuevoTelefono, String nuevoEmail){
+    public String actualizarCliente(String cedula, String nuevoNombre, int nuevoTelefono, String nuevoEmail){
         String respuesta;
         Cliente cl = obtenerCliente(cedula);
         if(cl == null){
@@ -501,6 +501,54 @@ public class Taller {
     public List<OrdenServicio> getListOrdenes() {
         return listOrdenes;
     }
+
+    //PARCIAL 1
+
+    /* 1. (0.75 pts) Implementa un método en la clase taller que, dado el número de teléfono de un
+    mecánico, cuente cuántos dígitos pares (0, 2, 4, 6, 8) tiene el número de teléfono.*/
+    public int contarDigitosParesMecanico(String telefono) {
+        int contador = 0;
+        for(int i = 0; i < telefono.length(); i++){
+            int digito = Integer.parseInt(String.valueOf(telefono.charAt(i)));
+            if(digito % 2 == 0){
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    /* 2. (0.75 pts) Implementar un método en la clase taller que, dado el número de teléfono de un cliente,
+    determine si es un número perfecto. Nota: Un número perfecto es aquel que es igual a la suma
+    de sus divisores propios (excluyendo el propio número). Por ejemplo, el número 6 es perfecto
+    porque sus divisores son 1, 2 y 3, y 1 + 2 + 3 = 6. */
+    public boolean esPerfecto(int numero){
+        boolean esPerfecto = false;
+        int suma = 0;
+        for(int i = 1; i < numero; i++){
+            if(numero % i == 0){
+                suma = suma + i;
+            }
+        }
+        if(suma == numero){
+            esPerfecto = true;
+        }
+        return esPerfecto;
+    }
+
+    /* 3. (1.0 pts) Implementa un método en la clase Taller que recorra la lista de órdenes
+    de servicio y acumule el costo total de todas las órdenes de servicio que fueron
+    generadas en una fecha específica (por ejemplo, "12/03/2026"). El método debe
+    retornar el costo total acumulado de las órdenes generadas en esa fecha.*/
+    public double acumularCostoPorFecha(String fechaBuscada){
+        double total = 0;
+        for(OrdenServicio orden : listOrdenes){
+            if(orden.getFechaIngreso().equals(fechaBuscada)){
+                total += orden.calcularCostoTotalOrden();
+            }
+        }
+        return total;
+    }
+
 
     @Override
     public String toString() {

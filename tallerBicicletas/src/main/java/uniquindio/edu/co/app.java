@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static javax.swing.JOptionPane.showInputDialog;
+
 public class app {
 
     public static void main(String[] args) {
@@ -30,7 +32,7 @@ public class app {
                             "Opción:";
 
             // Leer la opción seleccionada
-            String input = JOptionPane.showInputDialog(menu);
+            String input = showInputDialog(menu);
             if (input == null) break;
 
             try {
@@ -44,7 +46,7 @@ public class app {
 
                 // CRUD Cliente
                 case 1: {
-                    String sub = JOptionPane.showInputDialog(
+                    String sub = showInputDialog(
                             "=== CLIENTE ===\n" +
                                     "1. Crear\n" +
                                     "2. Listar Bicicletas\n" +
@@ -56,17 +58,17 @@ public class app {
 
                     if (op == 1) {
                         // Crear Cliente
-                        String nombre = JOptionPane.showInputDialog("Nombre del cliente:");
-                        String tel = JOptionPane.showInputDialog("Teléfono del cliente:");
-                        String email = JOptionPane.showInputDialog("Email del cliente:");
-                        String cedula = JOptionPane.showInputDialog("Cédula del cliente:");
+                        String nombre = showInputDialog("Nombre del cliente:");
+                        int tel = Integer.parseInt(showInputDialog("Teléfono del cliente:"));
+                        String email = showInputDialog("Email del cliente:");
+                        String cedula = showInputDialog("Cédula del cliente:");
 
                         String resultado = taller.crearCliente(nombre, tel, email, cedula);
                         JOptionPane.showMessageDialog(null, resultado);
                     }
                     else if (op == 2) {
                         // Listar Bicicletas de un Cliente
-                        String cedula = JOptionPane.showInputDialog("Cédula del cliente:");
+                        String cedula = showInputDialog("Cédula del cliente:");
                         Cliente cl = taller.obtenerCliente(cedula);
                         if (cl != null) {
                             StringBuilder bicicletas = new StringBuilder("=== Bicicletas del Cliente ===\n");
@@ -85,11 +87,11 @@ public class app {
                 // CRUD Mecánico
                 case 2: {
                     // Crear Mecánico
-                    String nombre = JOptionPane.showInputDialog("Nombre del mecanico:");
-                    String cedula = JOptionPane.showInputDialog("Cédula del mecanico:");
-                    String nivel = JOptionPane.showInputDialog("Nivel del mecanico:");
-                    String tel = JOptionPane.showInputDialog("Teléfono del mecanico:");
-                    String tarea = JOptionPane.showInputDialog("Tarea del mecanico:");
+                    String nombre = showInputDialog("Nombre del mecanico:");
+                    String cedula = showInputDialog("Cédula del mecanico:");
+                    String nivel = showInputDialog("Nivel del mecanico:");
+                    String tel = showInputDialog("Teléfono del mecanico:");
+                    String tarea = showInputDialog("Tarea del mecanico:");
 
                     JOptionPane.showMessageDialog(null, taller.crearMecanico(nombre, cedula, nivel, tel, tarea));
                     break;
@@ -98,11 +100,11 @@ public class app {
                 // CRUD Bicicleta
                 case 3: {
                     // Crear Bicicleta
-                    String marca = JOptionPane.showInputDialog("Marca de la bicicleta:");
-                    String color = JOptionPane.showInputDialog("Color de la bicicleta:");
-                    String chasis = JOptionPane.showInputDialog("Número de chasis de la bicicleta:");
-                    String tipo = JOptionPane.showInputDialog("Tipo de bicicleta:");
-                    String cedulaCliente = JOptionPane.showInputDialog("Cédula del cliente dueño de la bicicleta:");
+                    String marca = showInputDialog("Marca de la bicicleta:");
+                    String color = showInputDialog("Color de la bicicleta:");
+                    String chasis = showInputDialog("Número de chasis de la bicicleta:");
+                    String tipo = showInputDialog("Tipo de bicicleta:");
+                    String cedulaCliente = showInputDialog("Cédula del cliente dueño de la bicicleta:");
 
                     JOptionPane.showMessageDialog(null,
                             taller.crearBicicleta(marca, color, chasis, tipo, cedulaCliente));
@@ -112,10 +114,10 @@ public class app {
                 // CRUD Repuesto
                 case 4: {
                     // Crear Repuesto
-                    String nombre = JOptionPane.showInputDialog("Nombre repuesto:");
-                    int cantidad = Integer.parseInt(JOptionPane.showInputDialog("Cantidad:"));
-                    double costo = Double.parseDouble(JOptionPane.showInputDialog("Costo unitario:"));
-                    int id = Integer.parseInt(JOptionPane.showInputDialog("ID repuesto:"));
+                    String nombre = showInputDialog("Nombre repuesto:");
+                    int cantidad = Integer.parseInt(showInputDialog("Cantidad:"));
+                    double costo = Double.parseDouble(showInputDialog("Costo unitario:"));
+                    int id = Integer.parseInt(showInputDialog("ID repuesto:"));
 
                     JOptionPane.showMessageDialog(null,
                             taller.crearRepuesto(nombre, cantidad, costo, id));
@@ -124,14 +126,14 @@ public class app {
 
                 // Crear Orden de Servicio
                 case 5: {
-                    int idOrden = Integer.parseInt(JOptionPane.showInputDialog("ID Orden:"));
-                    String desc = JOptionPane.showInputDialog("Descripción:");
-                    String estado = JOptionPane.showInputDialog("Estado:");
-                    String fecha = JOptionPane.showInputDialog("Fecha ingreso:");
-                    double manoObra = Double.parseDouble(JOptionPane.showInputDialog("Mano de obra:"));
+                    int idOrden = Integer.parseInt(showInputDialog("ID Orden:"));
+                    String desc = showInputDialog("Descripción:");
+                    String estado = showInputDialog("Estado:");
+                    String fecha = showInputDialog("Fecha ingreso:");
+                    double manoObra = Double.parseDouble(showInputDialog("Mano de obra:"));
 
-                    String cedulaCliente = JOptionPane.showInputDialog("Cédula del cliente:");
-                    String chasis = JOptionPane.showInputDialog("Chasis de la bicicleta:");
+                    String cedulaCliente = showInputDialog("Cédula del cliente:");
+                    String chasis = showInputDialog("Chasis de la bicicleta:");
 
                     // Listar los nombres de los mecánicos disponibles
                     StringBuilder listaMecanicos = new StringBuilder("=== MECÁNICOS ===\n");
@@ -139,7 +141,7 @@ public class app {
                         listaMecanicos.append(m.getNombre()).append("\n");
                     }
 
-                    String nombreMecanico = JOptionPane.showInputDialog(listaMecanicos.toString() + "\nSeleccione el nombre del mecánico:");
+                    String nombreMecanico = showInputDialog(listaMecanicos.toString() + "\nSeleccione el nombre del mecánico:");
 
                     // Verificamos si el mecánico existe
                     Mecanico mecanicoSeleccionado = null;
@@ -156,7 +158,7 @@ public class app {
                     }
 
                     // Pedir IDs de repuestos separados por coma: 1,2,3
-                    String ids = JOptionPane.showInputDialog("IDs de repuestos (separados por coma). Ej: 1,2,3\nSi no hay, deje vacío:");
+                    String ids = showInputDialog("IDs de repuestos (separados por coma). Ej: 1,2,3\nSi no hay, deje vacío:");
                     List<Integer> idsRepuestos = new ArrayList<>();
 
                     if (ids != null && !ids.isBlank()) {
