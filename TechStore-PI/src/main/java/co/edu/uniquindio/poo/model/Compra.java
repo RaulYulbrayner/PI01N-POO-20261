@@ -37,7 +37,7 @@ public class Compra {
      * Agrega un producto a la compra.
      * @param producto producto a agregar
      */
-    public void agregarProducto(Producto producto) {
+    public void asignarProducto(Producto producto) {
         productos.add(producto);
     }
 
