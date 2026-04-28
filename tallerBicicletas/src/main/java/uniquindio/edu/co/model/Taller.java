@@ -526,7 +526,7 @@ public class Taller {
         int suma = 0;
         for(int i = 1; i < numero; i++){
             if(numero % i == 0){
-                suma = suma + i;
+                suma += i;
             }
         }
         if(suma == numero){

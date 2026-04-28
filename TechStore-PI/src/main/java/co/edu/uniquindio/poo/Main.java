@@ -118,7 +118,5 @@ public class Main {
         double total = tienda.calcularTotalCompra("C01");
 
         System.out.println("Total de la compra: $" + total);
-
-        System.out.println("\n===== FIN DEL SISTEMA =====");
     }
 }

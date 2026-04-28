@@ -174,7 +174,7 @@ public class Tienda {
         } else if (productoEncontrado == null) {
             respuesta = "El producto no existe";
         } else {
-            compraEncontrada.agregarProducto(productoEncontrado);
+            compraEncontrada.asignarProducto(productoEncontrado);
             respuesta = "Producto agregado correctamente a la compra";
         }
         return respuesta;
